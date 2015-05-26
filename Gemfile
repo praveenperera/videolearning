@@ -5,7 +5,8 @@ gem 'devise'
 gem 'rails_12factor', group: :production
 gem 'puma'
 gem 'materialize-sass'
-
+gem 'haml'
+gem "haml-rails"
 
 gem 'rails', '4.2.0'
 gem 'pg'
