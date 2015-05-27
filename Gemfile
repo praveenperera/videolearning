@@ -9,6 +9,7 @@ gem 'haml'
 gem "haml-rails"
 
 gem "toastr-rails"
+gem "mandrill-api", require: "mandrill"
 
 gem 'rails', '4.2.0'
 gem 'pg'

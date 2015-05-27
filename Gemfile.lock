@@ -85,6 +85,7 @@ GEM
       html2haml
     erubis (2.7.0)
     eventmachine (1.0.7)
+    excon (0.45.3)
     execjs (2.5.2)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
@@ -150,6 +151,9 @@ GEM
     lumberjack (1.0.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    mandrill-api (1.0.53)
+      excon (>= 0.16.0, < 1.0)
+      json (>= 1.7.7, < 2.0)
     materialize-sass (0.96.2)
       sass (~> 3.3)
     method_source (0.8.2)
@@ -305,6 +309,7 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   letter_opener
+  mandrill-api
   materialize-sass
   pg
   puma
