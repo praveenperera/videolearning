@@ -264,6 +264,8 @@ GEM
     tilt (1.4.1)
     timers (4.0.1)
       hitimes
+    toastr-rails (1.0.3)
+      railties (>= 3.1.0)
     turbolinks (2.5.3)
       coffee-rails
     tzinfo (1.2.2)
@@ -316,6 +318,7 @@ DEPENDENCIES
   sdoc
   shoulda-matchers
   spring
+  toastr-rails
   turbolinks
   uglifier
   web-console (~> 2.0)

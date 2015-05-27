@@ -30,9 +30,11 @@
 						%li=link_to "Sign Up", new_user_registration_path
 						%li=link_to "Login", new_user_session_path
 					-else
-						-#Drop down trigger
+						-#Dropdown trigger
 						%li
-							%a.dropdown-button{"data-activates" => "dropdown1", :href => "#!"}
+							%a.dropdown-button.valign-wrapper{"data-activates" => "dropdown1", :href => "#!"}
+								=image_tag avatar_url(current_user), class: "circle responsive-img"
+								&nbsp;
 								=current_user.name
 								%i.mdi-navigation-arrow-drop-down.right
 
@@ -43,8 +45,10 @@
 						%li=link_to "Sign Up", new_user_registration_path
 						%li=link_to "Login", new_user_session_path
 					-else
-						-#Drop down trigger
+						-#Dropdown trigger
 						%li
-							%a.dropdown-button{"data-activates" => "dropdown2", :href => "#!"}
+							%a.dropdown-button.valign-wrapper{"data-activates" => "dropdown2", :href => "#!"}
+								=image_tag avatar_url(current_user), class: "circle responsive-img"
+								&nbsp;
 								=current_user.name
 								%i.mdi-navigation-arrow-drop-down.right

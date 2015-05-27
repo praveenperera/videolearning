@@ -8,6 +8,8 @@ gem 'materialize-sass'
 gem 'haml'
 gem "haml-rails"
 
+gem "toastr-rails"
+
 gem 'rails', '4.2.0'
 gem 'pg'
 gem 'sass-rails'

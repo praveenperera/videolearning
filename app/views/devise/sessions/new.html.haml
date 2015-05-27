@@ -2,10 +2,7 @@
 	.col.m6.offset-m3.center
 		%h5 Log in
 		= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-			= devise_error_messages!
-			.input-field
-				=f.text_field :name, autofocus:true, :class => "validate", :placeholder => "Name"
-
+			= render partial: "shared/devisemes"
 			.input-field
 				= f.email_field :email, :class => "validate", :placeholder => "Email"
 
