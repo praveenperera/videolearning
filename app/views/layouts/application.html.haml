@@ -1,80 +1,23 @@
 !!!
 %html
-  %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title VideoLearning
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
-    = csrf_meta_tags
-  %body
-    / Dropdown Structure
-    %ul#dropdown1.dropdown-content
-      %li
-        %a{:href => "#!"} My Profile
-      %li
-        %a{:href => "#!"} My Courses
-      %li.divider
-      %li
-        %a{:href => "#!"} Log Out
-    %ul#dropdown2.dropdown-content
-      %li
-        %a{:href => "#!"} My Profile
-      %li
-        %a{:href => "#!"} My Courses
-      %li.divider
-      %li
-        %a{:href => "#!"} Log Out
-    %header
-      %nav.blue.lighten-1
-        .container
-          .nav-wrapper
-            %a.brand-logo{:href => "#"} VideoLearning
-            %a.button-collapse{"data-activates" => "mobile-demo", :href => "#"}
-              %i.mdi-navigation-menu
-            %ul.right.hide-on-med-and-down
-              %li
-                %a{:href => "#"} Courses
-              %li
-                %a{:href => "#"} Sign Up
-              / Dropdown Trigger
-              %li
-                %a.dropdown-button{"data-activates" => "dropdown1", :href => "#!"}
-                  Praveen Perera
-                  %i.mdi-navigation-arrow-drop-down.right
-            %ul#mobile-demo.side-nav
-              %li
-                %a{:href => "#"} Courses
-              %li
-                %a{:href => "#"} Sign Up
-              / Dropdown Trigger
-              %li
-                %a.dropdown-button{"data-activates" => "dropdown2", :href => "#!"}
-                  Praveen Perera
-                  %i.mdi-navigation-arrow-drop-down.right
-    %main
-      .container
-        = yield
-    %footer.page-footer.blue.lighten-1
-      .container
-        .row
-          .col.l6.s12
-            %h5.white-text Footer Content
-            %p.grey-text.text-lighten-4 You can use rows and columns here to organize your footer content.
-          .col.l4.offset-l2.s12
-            %h5.white-text Links
-            %ul
-              %li
-                %a.grey-text.text-lighten-3{:href => "#!"} Link 1
-              %li
-                %a.grey-text.text-lighten-3{:href => "#!"} Link 2
-              %li
-                %a.grey-text.text-lighten-3{:href => "#!"} Link 3
-              %li
-                %a.grey-text.text-lighten-3{:href => "#!"} Link 4
-      .footer-copyright
-        .container
-          © 2015 Copyright Praveen
-          %a.grey-text.text-lighten-4.right{:href => "#!"} More Links
-  :javascript
-    $(".button-collapse").sideNav();
-    $(".dropdown-button").dropdown();
+	%head
+		%meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+		%title VideoLearning
+		= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+		= javascript_include_tag 'application', 'data-turbolinks-track' => true
+		= csrf_meta_tags
+	%body
+
+		=render partial: "shared/header"
+		=render partial: "shared/message"
+
+		%main
+			.container
+				= yield
+
+		=render partial: "shared/footer"
+
+
+	:javascript
+		$(".button-collapse").sideNav();
+		$(".dropdown-button").dropdown();
