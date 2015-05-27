@@ -2,7 +2,7 @@
 	-# Dropdown Structure
 	%ul#dropdown1.dropdown-content
 		%li
-			%a{:href => "#!"} My Profile
+			=link_to "My Profile", edit_user_registration_path
 		%li
 			%a{:href => "#!"} My Courses
 		%li.divider
@@ -10,7 +10,7 @@
 			=link_to("Log Out", destroy_user_session_path, method: :delete)
 	%ul#dropdown2.dropdown-content
 		%li
-			%a{:href => "#!"} My Profile
+			=link_to "My Profile", edit_user_registration_path
 		%li
 			%a{:href => "#!"} My Courses
 		%li.divider
@@ -33,7 +33,7 @@
 						-#Drop down trigger
 						%li
 							%a.dropdown-button{"data-activates" => "dropdown1", :href => "#!"}
-								=current_user.email
+								=current_user.name
 								%i.mdi-navigation-arrow-drop-down.right
 
 				%ul#mobile-demo.side-nav
@@ -46,5 +46,5 @@
 						-#Drop down trigger
 						%li
 							%a.dropdown-button{"data-activates" => "dropdown2", :href => "#!"}
-								=current_user.email
+								=current_user.name
 								%i.mdi-navigation-arrow-drop-down.right
