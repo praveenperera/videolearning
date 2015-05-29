@@ -2,7 +2,8 @@
 	.col.m6.offset-m3.center
 		%h5 Log in
 
-	= link_to "Login with Google", user_omniauth_authorize_path(:google_oauth2), class: "btn red darken-1"
+		= link_to "Login with Facebook", user_omniauth_authorize_path(:facebook), class: "btn blue darken-3"
+		= link_to "Login with Google", user_omniauth_authorize_path(:google_oauth2), class: "btn red darken-1"
 
 		= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
 			= render partial: "shared/devisemes"
@@ -15,6 +16,4 @@
 			%button.btn.waves-effect.waves-light
 				Login
 
-			=link_to "Forgot Password", new_user_password_path, :class => "btn waves-effect waves-light"
-
-
+			= link_to "Forgot Password", new_user_password_path, :class => "btn waves-effect waves-light"

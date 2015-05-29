@@ -20,7 +20,7 @@
 	%nav.blue.lighten-1
 		.container
 			.nav-wrapper
-				%a.brand-logo{:href => "#"} VideoLearning
+				=link_to "VideoLearning", root_path, class: 'brand-logo'
 				%a.button-collapse{"data-activates" => "mobile-demo", :href => "#"}
 					%i.mdi-navigation-menu
 				%ul.right.hide-on-med-and-down
