@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150529091456) do
+ActiveRecord::Schema.define(version: 20150529093308) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,19 +53,23 @@ ActiveRecord::Schema.define(version: 20150529091456) do
     t.string   "name"
     t.text     "content"
     t.integer  "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "tasks", force: :cascade do |t|
     t.string   "title"
     t.text     "note"
     t.string   "video"
-    t.boolean  "header"
+    t.boolean  "header",     default: false, null: false
     t.string   "tag"
     t.integer  "project_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   add_index "tasks", ["project_id"], name: "index_tasks_on_project_id", using: :btree

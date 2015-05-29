@@ -19,6 +19,8 @@ gem 'omniauth-github'
 gem 'activeadmin', '~> 1.0.0.pre1'
 gem 'active_skin'
 
+gem 'paperclip'
+
 gem 'rails', '4.2.0'
 gem 'pg'
 gem 'sass-rails'
