@@ -14,6 +14,8 @@ gem "mandrill-api", require: "mandrill"
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
+gem 'omniauth-github'
+
 
 gem 'rails', '4.2.0'
 gem 'pg'
