@@ -1,0 +1,30 @@
+.row
+	.col.m4
+		.card.z-depth-2
+			.center
+				%h1=number_to_currency(@project.price, precision: 0)
+
+			.card-action.center
+				%button.btn.waves-effect.waves-light.pink.darken-2
+					Take this Project
+
+	.col.m8
+		.card.z-depth-2
+			.card-image
+				=image_tag @project.image
+			.card-content.grey-text.text-darken-4
+				%h5=@project.name
+				%hr/
+				=@project.content
+
+				.collection
+					-@tasks.each do |task|
+						-if task.header
+							.collection-item.active
+								%i.mdi-social-school
+									&nbsp;
+									=task.title
+						-else
+							=link_to [task.project,task], class: "collection-item" do
+								=task.title
+
