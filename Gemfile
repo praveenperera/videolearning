@@ -16,6 +16,7 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem 'omniauth-github'
 
+gem 'activeadmin', '~> 1.0.0.pre1'
 
 gem 'rails', '4.2.0'
 gem 'pg'
