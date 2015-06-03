@@ -21,6 +21,10 @@ gem 'active_skin'
 
 gem 'paperclip'
 
+#markdown
+gem 'redcarpet', '~> 3.2.3'
+gem 'coderay', '~> 1.1.0'
+
 gem 'rails', '4.2.0'
 gem 'pg'
 gem 'sass-rails'

@@ -1,3 +1,22 @@
-%h1= @task.title
-%p= @task.note
-%p= @task.video
+.row
+	.col.m4
+		.card.z-depth-1
+			.card-content
+				.collection
+					-@tasks.each do |task|
+						-if task.header
+							.collection-item.active
+								%i.mdi-social-school=task.title
+						-else
+							=link_to [task.project,task], class: "collection-item" do
+								=task.title
+
+	.col.m8
+		.card.z-depth-1
+			.card-content
+				=@task.video
+			.card-action.grey-test.text-darken-4
+				%h5=@task.title
+				%hr/
+				~markdown(@task.note)
+
