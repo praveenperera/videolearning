@@ -25,6 +25,8 @@ gem 'paperclip'
 gem 'redcarpet', '~> 3.2.3'
 gem 'coderay', '~> 1.1.0'
 
+gem 'friendly_id', '~> 5.1.0'
+
 gem 'rails', '4.2.0'
 gem 'pg'
 gem 'sass-rails'

@@ -10,3 +10,15 @@ body {
 main {
   flex: 1 0 auto;
 }
+
+.paragraph-spacing{
+	p{margin-bottom: 1rem !important;}
+}
+
+.listable{
+	li{
+		list-style-type: disc !important;
+		list-style-position: inside !important;
+		margin-left: 1rem !important;
+	}
+}
