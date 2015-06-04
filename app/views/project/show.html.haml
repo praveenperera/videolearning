@@ -17,7 +17,7 @@
 				%hr/
 				~markdown(@project.content)
 
-				.collection
+				.collection{data: { no_turbolink: true }}
 					-@tasks.each do |task|
 						-if task.header
 							.collection-item.active

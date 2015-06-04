@@ -1,4 +1,4 @@
-.row
+.row{data: {no_turbolink: true }}
 	.col.m4
 		.card.z-depth-1
 			.card-content
@@ -13,10 +13,40 @@
 
 	.col.m8
 		.card.z-depth-1
+			%div{id: "wistia_#{@task.video}"}
+			.row
+				.col.m6
+					-if !@previous_task.nil?
+						=link_to "Prev", [@previous_task.project, @previous_task], class: "btn btn-primary" if !@previous_task.nil?
+					-else
+						&nbsp;
+				.col.m6
+					%span.right
+						=link_to "Next", [@next_task.project, @next_task], class: "btn btn-primary" if !@next_task.nil?
+
+
+
 			.card-content
-				=@task.video
 			.card-action.grey-test.text-darken-4
+				%button.btn.btn-primary{onclick: "setPlayspeed(0.75)"} 0.75x
+				%button.btn.btn-primary{onclick: "setPlayspeed(1)"} 1x
+				%button.btn.btn-primary{onclick: "setPlayspeed(1.25)"} 1.25x
+				%button.btn.btn-primary{onclick: "setPlayspeed(1.50)"} 1.50x
+				%button.btn.btn-primary{onclick: "setPlayspeed(2)"} 2x
+
 				%h5=@task.title
+
 				%hr/
 				~markdown(@task.note)
 
+
+%script{src: "https://fast.wistia.net/static/E-v1.js"}
+:javascript
+	wistiaEmbed = Wistia.embed("#{@task.video}", {
+		videoQuality: "hd-only",
+		videoFoam: true
+	});
+
+	function setPlaySpeed(speed) {
+		wistiaEmbed.playbackRate(speed);
+	}

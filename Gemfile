@@ -27,6 +27,8 @@ gem 'coderay', '~> 1.1.0'
 
 gem 'friendly_id', '~> 5.1.0'
 
+gem "active_admin-sortable_tree"
+
 gem 'rails', '4.2.0'
 gem 'pg'
 gem 'sass-rails'
