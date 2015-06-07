@@ -2,6 +2,8 @@ class Project < ActiveRecord::Base
 	extend FriendlyId
 	friendly_id :name, use: [:slugged, :finders]
 
+	has_many :subscriptions
+	has_many :users, through: :subscriptions
 	has_many :tasks
 
 	validates :name, presence: true, length: {maximum: 50}

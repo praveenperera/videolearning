@@ -9,6 +9,9 @@ class User < ActiveRecord::Base
 
 	after_create :send_notification
 
+	has_many :subscriptions
+	has_many :projects, through: :subscriptions
+
 	def send_notification
 		MyMailer.new_user(self).deliver
 	end

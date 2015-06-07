@@ -1,12 +1,34 @@
 .row
 	.col.m4
 		.card.z-depth-2
-			.center
-				%h1=number_to_currency(@project.price, precision: 0)
 
-			.card-action.center
-				%button.btn.waves-effect.waves-light.pink.darken-2
-					Take this Project
+			- if !@joined
+				.center
+					%h1=@project.price == 0? "Free" : "$#{@project.price}"
+
+				.card-action.center
+					-if user_signed_in?
+						=form_tag free_path do
+							= hidden_field_tag 'project_id', @project.id
+							%button.btn.waves-effect.waves-light.pink.darken-2{type: "submit"}
+								Take this Project
+
+					-else
+						=link_to new_user_session_path do
+							%button.btn.waves-effect.waves-light.pink.darken-2{type: "submit"}
+								Take this Project
+			- else
+				.center
+					%br/
+					=image_tag avatar_url(current_user), class: "circle responsive-img"
+					%h5=current_user.name
+				.card-action.center
+					%span.valign-wrapper
+						-@users.each do |u|
+							=image_tag avatar_url(u), class: "circle responsive-img"
+							&nbsp;
+							=u.name
+
 
 	.col.m8
 		.card.z-depth-2

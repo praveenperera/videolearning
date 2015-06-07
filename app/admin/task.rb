@@ -1,6 +1,6 @@
 ActiveAdmin.register Task do
 
-  permit_params :title, :note, :video, :header, :tag, :project_id
+  permit_params :title, :note, :video, :header, :tag, :project_id, :slug
 
   sortable tree: false,
   	sorting_attribute: :tag
