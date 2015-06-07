@@ -18,16 +18,16 @@
 							%button.btn.waves-effect.waves-light.pink.darken-2{type: "submit"}
 								Take this Project
 			- else
-				.center
-					%br/
-					=image_tag avatar_url(current_user), class: "circle responsive-img"
+				.card-content.center
+					=image_tag avatar_url(current_user), class: "circle responsive-img avatar-medium"
 					%h5=current_user.name
 				.card-action.center
-					%span.valign-wrapper
-						-@users.each do |u|
-							=image_tag avatar_url(u), class: "circle responsive-img"
+					-@users.each do |u|
+						%span.valign-wrapper
+							=image_tag avatar_url(u), class: "circle responsive-img avatar-small"
 							&nbsp;
 							=u.name
+						%br/
 
 
 	.col.m8
