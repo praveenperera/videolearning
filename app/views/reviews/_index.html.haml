@@ -11,7 +11,14 @@
 				%div
 					%strong=r.user.name
 					%span.right=r.created_at
-				%div=r.star
+				%div{id: "stars_#{r.id}"}
 				%div=r.comment
 				%div
 					=link_to "Remove", [@project, r], method: :delete, data: {confirm: "Are you Sure?"} if r.user == current_user
+
+		:javascript
+			$('#stars_#{r.id}').raty({
+				path: '/assets',
+				readOnly: true,
+				score: #{r.star}
+			});
