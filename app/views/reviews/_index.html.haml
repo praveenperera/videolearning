@@ -10,7 +10,7 @@
 			.col.m10
 				%div
 					%strong=r.user.name
-					%span.right=r.created_at
+					%span.right=time_ago_in_words(r.created_at, include_seconds: true)
 				%div{id: "stars_#{r.id}"}
 				%div=r.comment
 				%div
