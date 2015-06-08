@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
 
 	has_many :subscriptions
 	has_many :projects, through: :subscriptions
+	has_many :reviews
 
 	def send_notification
 		MyMailer.new_user(self).deliver

@@ -1,0 +1,17 @@
+-if @reviews.blank? || !user_signed_in?
+	%span.center There is no reviews yet
+
+-else
+	-@reviews.order("id desc").each do |r|
+		%hr/
+		.row
+			.col.m1
+				=image_tag avatar_url(r.user), class: "circle responsive-img avatar-small"
+			.col.m10
+				%div
+					%strong=r.user.name
+					%span.right=r.created_at
+				%div=r.star
+				%div=r.comment
+				%div
+					=link_to "Remove", [@project, r], method: :delete, data: {confirm: "Are you Sure?"} if r.user == current_user
