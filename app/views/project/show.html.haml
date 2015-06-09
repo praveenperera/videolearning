@@ -49,7 +49,7 @@
 					.card-content.grey-text.text-darken-4.paragraph-spacing.listable
 						%h5=@project.name
 						%span#average_rating
-						%p="#{@reviews.count} #{@reviews.count > 1? "Reviews" : "Review"}"
+						%p="#{@reviews.count} #{@reviews.count == 1? "Review" : "Reviews"}"
 						%hr/
 						~markdown(@project.content)
 

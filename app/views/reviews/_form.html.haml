@@ -1,19 +1,18 @@
-=form_for([@project, @review]) do |f|
+=simple_form_for([@project, @review]) do |f|
 	#user_stars
-	=f.text_field :comment
+	=f.text_area :comment, rows: 8, placeholder: "Your comment here...", class: "materialize-textarea"
 	=f.hidden_field :project_id, :value => @project.id
 	=f.hidden_field :user_id, :value => current_user.id
 
-	.actions
-		=f.submit
-
+	%button.btn.waves-effect.waves-light{type: "submit"} Send Review
+	%br/
 	%br/
 
 :javascript
 	$('#user_stars').raty({
 		path: '/assets',
 		scoreName: 'review[star]',
-		score: 5
+		score: 0
 	})
 
 
