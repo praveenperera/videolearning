@@ -34,27 +34,46 @@
 		.card.z-depth-2
 			.card-image
 				=image_tag @project.image
-			.card-content.grey-text.text-darken-4.paragraph-spacing.listable
-				%h5=@project.name
-				%span#average_rating
-				%p="#{@reviews.count} #{@reviews.count > 1? "Reviews" : "Review"}"
-				%hr/
-				~markdown(@project.content)
 
-				.collection{data: { no_turbolink: true }}
-					-@tasks.each do |task|
-						-if task.header
-							.collection-item.active
-								%i.mdi-social-school
-									&nbsp;
+			.row
+			.col.s12
+				%ul.tabs
+					%li.tab.col.s3
+						%a.active{:href => "#about"} About
+					%li.tab.col.s3
+						%a{:href => "#videos"} Videos
+					%li.tab.col.s3
+						%a{:href => "#discussions"} Discussions
+
+				#about.col.s12
+					.card-content.grey-text.text-darken-4.paragraph-spacing.listable
+						%h5=@project.name
+						%span#average_rating
+						%p="#{@reviews.count} #{@reviews.count > 1? "Reviews" : "Review"}"
+						%hr/
+						~markdown(@project.content)
+
+						%h4 Reviews
+						%div= render 'reviews/form' if @joined && !@hasReview
+						%div= render 'reviews/index'
+
+
+				#videos.col.s12
+					.collection{data: { no_turbolink: true }}
+						-@tasks.each do |task|
+							-if task.header
+								.collection-item.active
+									%i.mdi-social-school
+										&nbsp;
+										=task.title
+							-else
+								=link_to [task.project,task], class: "collection-item" do
 									=task.title
-						-else
-							=link_to [task.project,task], class: "collection-item" do
-								=task.title
-			.card-content
-				%h4 Reviews
-				%div= render 'reviews/form' if @joined && !@hasReview
-				%div= render 'reviews/index'
+
+				#discussions.col.s12
+
+
+
 
 
 :javascript

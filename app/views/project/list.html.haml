@@ -1,5 +1,5 @@
 %br/
-.row
+.row{data: { no_turbolink: true }}
 	-if @projects.count > 0
 		- @projects.each do |project|
 			= link_to project do
