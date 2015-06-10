@@ -8,10 +8,22 @@
 
 				.card-action.center
 					-if user_signed_in?
-						=form_tag free_path do
-							= hidden_field_tag 'project_id', @project.id
-							%button.btn.waves-effect.waves-light.pink.darken-2{type: "submit"}
-								Take this Project
+						-if @project.price == 0
+							=form_tag free_path do
+								=hidden_field_tag 'project_id', @project.id
+								%button.btn.waves-effect.waves-light.pink.darken-2{type: "submit"}
+									Take this Project
+						-else
+							=form_tag pay_path, id:'chargeForm' do
+								%script{src: "https://checkout.stripe.com/checkout.js"}
+								=hidden_field_tag 'stripeToken'
+								=hidden_field_tag 'stripeEmail'
+								=hidden_field_tag 'project_id', @project.id
+
+								%button#btn-buy.btn.pink.darken-2{type: "button"} Take This Project
+								%br/
+
+								=render partial: "shared/js/stripe"
 
 					-else
 						=link_to new_user_session_path do

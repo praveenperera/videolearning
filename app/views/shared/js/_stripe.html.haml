@@ -1,0 +1,22 @@
+:plain
+	<script type="text/javascript">
+		var handler = StripeCheckout.configure({
+			key: '#{ENV['STRIPE_PUBLISHABLE_KEY']}',
+			token: function(token,arg) {
+				$('#stripeToken').val(token.id);
+				$('#stripeEmail').val(token.email);
+				$('#chargeForm').submit();
+			}
+		});
+
+		$('#btn-buy').on('click', function(e) {
+			handler.open({
+				name: 'Video Learning',
+				description: '#{@project.name}',
+				currency: 'usd',
+				amount: '#{@project.price_in_cents}',
+				email: '#{current_user.email}'
+			});
+			e.preventDefault();
+		});
+	</script>

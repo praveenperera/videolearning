@@ -31,6 +31,8 @@ gem "active_admin-sortable_tree"
 
 gem 'simple_form'
 
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
 gem 'rails', '4.2.0'
 gem 'pg'
 gem 'sass-rails'
