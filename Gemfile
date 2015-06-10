@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'pundit'
+gem 'figaro'
 gem 'devise'
-gem 'rails_12factor', group: :production
+gem 'pundit'
 gem 'puma'
 gem 'materialize-sass'
 gem 'haml'

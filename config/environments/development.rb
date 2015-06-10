@@ -46,7 +46,7 @@ Rails.application.configure do
     port: 587,
     enable_starttls_auto: true,
     user_name: 'ppraveen25@gmail.com',
-    password: 'Jca_zXYNhIfpaxRJ5WcC8A',
+    password: ENV['MAILER_API_KEY'],
     authentication: 'login'
   }
 

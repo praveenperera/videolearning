@@ -264,14 +264,12 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 
   require 'omniauth-github'
-  config.omniauth :github,'0b5610ceb9618fb0d7db','f5ac5642361a4ef9dcfd3eee00e22dd8df9c41eb', scope: "user:email"
+  config.omniauth :github, ENV['GITHUB_APP_ID'],ENV['GITHUB_APP_SECRET'], scope: "user:email"
 
   require 'omniauth-facebook'
-  config.omniauth :facebook,'1842648209294594','9e75516a85e6afdfbb16953d7604db73'
+  config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET']
 
   require 'omniauth-google-oauth2'
-  config.omniauth :google_oauth2,'6438306540-39fu6a40p1nvj6jpdhcod9g7ukro9i3c.apps.googleusercontent.com','q3FKi0zzFj1Htofg2I9SQqhj',{access_type: "offline", approval_prompt: ""}
-
-
+  config.omniauth :google_oauth2, ENV['GOOGLE_APP_ID'], ENV['GOOGLE_APP_SECRET'],{access_type: "offline", approval_prompt: ""}
 
 end
