@@ -38,7 +38,7 @@ class ChargeController < ApplicationController
 private
 	def authenticate_free
 	  if Project.find(params[:project_id]).price > 0
-	    redirect_to requests_path, alert: "You must pay for this project"
+	    redirect_to project, alert: "You must pay for this project"
 	  end
 	end
 
