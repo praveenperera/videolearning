@@ -25,5 +25,14 @@ module ApplicationHelper
 		markdown_to_html = Redcarpet::Markdown.new(coderayified, options)
 		markdown_to_html.render(text).html_safe
 	end
+
+	def title(page_title, full_custom: false)
+	  if full_custom == true
+	  	content_for :title, page_title
+	  else
+	  	content_for :title, page_title + ' | VideoLearning'
+	  end
+	end
+
 end
 

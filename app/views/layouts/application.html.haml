@@ -2,12 +2,15 @@
 %html
 	%head
 		%meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-		%title VideoLearning
+		%title=yield(:title).empty? ? 'VideoLearning' : yield(:title)
 		= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
 		= javascript_include_tag 'application', 'data-turbolinks-track' => true
 		= csrf_meta_tags
-	%body
+		= yield :head if yield(:head).present?
 
+
+
+	%body
 		=render partial: "shared/header"
 		=render partial: "shared/message"
 
