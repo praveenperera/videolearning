@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Synopsis
 
 Platform for Queen's University students to share rides between home and kingston, or anywhere in between. This project is currently in currently in a very early alpha stage. 
@@ -79,3 +80,7 @@ Download the repo, navigate to folde via terminal and run bundle install to get 
 
 qrideshare is under MIT license - http://www.opensource.org/licenses/mit-license.php
 
+=======
+# videolearning
+Platform to launch free and paid video courses
+>>>>>>> c3d61cc6b5bb088e32c1054ff9c349b8229a2142
