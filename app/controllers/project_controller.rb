@@ -1,5 +1,7 @@
 class ProjectController < ApplicationController
   before_action :authenticate_user!, only: [:list]
+  before_action :authenticate_user_joined!, only: [:show]
+
 
   def index
 	@projects = Project.all
@@ -29,5 +31,11 @@ class ProjectController < ApplicationController
 	  @projects = current_user.projects
 	end
   end
+
+  private
+
+  	def authenticate_user_joined
+
+  	end
 
 end

@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'figaro'
 gem 'devise'
+gem 'figaro'
 gem 'pundit'
 gem 'puma'
 gem 'materialize-sass'
@@ -18,6 +18,7 @@ gem 'omniauth-github'
 
 gem 'activeadmin', '~> 1.0.0.pre1'
 gem 'active_skin'
+gem "active_admin-sortable_tree"
 
 gem 'paperclip'
 
@@ -26,8 +27,6 @@ gem 'redcarpet', '~> 3.2.3'
 gem 'coderay', '~> 1.1.0'
 
 gem 'friendly_id', '~> 5.1.0'
-
-gem "active_admin-sortable_tree"
 
 gem 'simple_form'
 
