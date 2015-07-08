@@ -1,6 +1,5 @@
 class ProjectController < ApplicationController
   before_action :authenticate_user!, only: [:list]
-  before_action :authenticate_user_joined!, only: [:show]
 
 
   def index
@@ -13,7 +12,6 @@ class ProjectController < ApplicationController
 	@tasks = @project.tasks.order(:tag)
 
 	@joined = false
-
 	if !current_user.nil? && !current_user.projects.nil?
 		@joined = current_user.projects.include?(@project)
 	end
@@ -31,11 +29,5 @@ class ProjectController < ApplicationController
 	  @projects = current_user.projects
 	end
   end
-
-  private
-
-  	def authenticate_user_joined
-
-  	end
 
 end

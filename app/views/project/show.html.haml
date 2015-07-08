@@ -1,5 +1,22 @@
 = title(@project.name)
--# = content_for :head do
+- content_for :head do
+	-# twitter card data
+	%meta{:name => "twitter:card", :content => "summary_large_image"}
+	%meta{:name => "twitter:site", :content => "@praveenperera"}
+	%meta{:name => "twitter:creator",:content => "@praveenperera"}
+	%meta{:name => "twitter:title" ,:content => "#{@project.name}"}
+	%meta{:name => "twitter:description", :content => "#{@project.content}"}
+	%meta{:name => "twitter:image:src", :content => "#{image_url @project.image}"}
+
+	-# open graph data
+	%meta{:property => "og:site_name", :content => "VideoLearning"}
+	%meta{:property => "og:type", :content => "website"}
+	%meta{:property => "og:title",:content => "#{title(@project.name)}"}
+	%meta{:property => "og:description", :content => "#{@project.content}"}
+	%meta{:property => "og:image", :content => "#{@project.image}"}
+
+
+
 
 
 .row
@@ -87,6 +104,26 @@
 									=task.title
 
 				#discussions.col.s12
+					#disqus_thread
+					:javascript
+						var disqus_shortname = 'videolearningpraveen';
+						var disqus_identifer = '#{@project.id}';
+
+						(function() {
+							var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+							dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+							(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+						})();
+
+					%noscript
+						Please enable JavaScript to view the
+						%a{:href=>"http://disqus.com/?ref_noscript=videolearningpraveen"} comments
+						powered by Disqus.
+					-# %a.dsq-brlink{:href=>"http://disqus.com"}
+					-# 	comments powered by
+					-# 	%span.logo-disqus Disqus
+
+
 
 
 
