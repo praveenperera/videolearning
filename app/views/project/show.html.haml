@@ -1,5 +1,22 @@
 = title(@project.name)
--# = content_for :head do
+- content_for :head do
+	-# twitter card data
+	%meta{:name => "twitter:card", :content => "summary_large_image"}
+	%meta{:name => "twitter:site", :content => "@praveenperera"}
+	%meta{:name => "twitter:creator",:content => "@praveenperera"}
+	%meta{:name => "twitter:title" ,:content => "#{@project.name}"}
+	%meta{:name => "twitter:description", :content => "#{@project.content}"}
+	%meta{:name => "twitter:image:src", :content => "#{image_url @project.image}"}
+
+	-# open graph data
+	%meta{:property => "og:site_name", :content => "VideoLearning"}
+	%meta{:property => "og:type", :content => "website"}
+	%meta{:property => "og:title",:content => "#{title(@project.name)}"}
+	%meta{:property => "og:description", :content => "#{@project.content}"}
+	%meta{:property => "og:image", :content => "#{@project.image}"}
+
+
+
 
 
 .row
