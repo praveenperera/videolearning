@@ -9,6 +9,15 @@
 		= yield :head if yield(:head).present?
 		%script{:src => "//load.sumome.com/",:async => "async",  :data => {:sumo_site_id => "41cda50376d89d1332ea79e0fd3e557bd2a58433e6911923f24149ee1d5c40cc"}}
 
+		-#zopim script
+		:javascript
+			window.$zopim||(function(d,s){var z=$zopim=function(c){
+			z._.push(c)},$=z.s=
+			d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+			_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute('charset','utf-8');
+			$.src='//v2.zopim.com/?39KUArsqRxAvsy3T2DN19bABiv3NMzHg';z.t=+new Date;$.
+			type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
+
 	%body
 		=render partial: "shared/header"
 		=render partial: "shared/message"
