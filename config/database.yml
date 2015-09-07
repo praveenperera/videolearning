@@ -85,4 +85,4 @@ production:
   <<: *default
   database: VideoLearning_production
   username: Praveen
-  password: <%= ENV['QRIDESHARE_DATABASE_PASSWORD'] %>
+  password: <%= ENV['VIDEOLEARNING_DATABASE_PASSWORD'] %>

@@ -15,7 +15,7 @@ class TaskController < ApplicationController
       project = Project.find(params[:project_id])
 
       joined = false
-      if current_user.nil? && !current_user.projects.nil?
+      if !current_user.nil? && !current_user.projects.nil?
         joined = current_user.projects.include?(project)
       end
 
