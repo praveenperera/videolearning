@@ -20,6 +20,7 @@ config/application.yml
 ## Environment normalisation:
 /.bundle
 /vendor/bundle
+vendor/bundle
 
 Gemfile.lock, .ruby-version, .ruby-gemset
 
